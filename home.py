@@ -4,8 +4,16 @@ import pandas as pd
 title = "Petrol and diesel prices ⛽" 
 subheader = "Weekly average UK prices of unleaded petrol and diesel"
 
+info_text = """
+* ULSP = Ultra low sulphur unleaded petrol
+* ULSD = Ultra low sulphur diesel
+
+All prices in GBP pence per litre.
+"""
 st.title(title)
 st.subheader(subheader)
+
+st.markdown(info_text)
 
 fn = r"data/petrol_diesel_prices_uk.csv"
 date_colums = ['Date']
@@ -32,6 +40,5 @@ options = list(data.set_index('Date').columns)
 selection = st.multiselect('Select one or more options to plot',options)
 st.line_chart(data=data, x='Date', y=selection)
 
-source = "Published by Department for Energy Security and Net Zero"
-
-st.text(source)
+#source = "Data source: Published by Department for Energy Security and Net Zero"
+#st.text(source)
