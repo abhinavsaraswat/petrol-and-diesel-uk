@@ -1,7 +1,7 @@
 import streamlit as st 
 import pandas as pd 
 
-title = "Petrol and diesel prices"
+title = "Petrol and diesel prices ⛽" 
 subheader = "Weekly average UK prices of unleaded petrol and diesel"
 
 st.title(title)
